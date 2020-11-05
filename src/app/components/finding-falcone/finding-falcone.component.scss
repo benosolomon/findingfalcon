@@ -1,0 +1,28 @@
+.intro {
+  margin: 20px auto;
+  text-align: center;
+}
+.box-container {
+  border: grey;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.example-full-width {
+  width: 100%;
+}
+.is-active {
+  background-color:red;
+}
+
+mat-list-option[aria-disabled=true] {
+  cursor: not-allowed;
+  opacity: 0.3;
+  pointer-events: none;
+}
+mat-list-option[aria-selected=true] {
+  background-color: #98FB98;
+}

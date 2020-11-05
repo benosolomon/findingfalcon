@@ -1,0 +1,27 @@
+<div fxFlex>
+  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" class="intro">
+    <div fxLayoutAlign="center center">
+      <img mat-card-avatar src="./assets/king_shan.jpg" alt="King shan">
+    </div>
+    <div class="container">
+      <div *ngIf="finalResponse && finalResponse.status == 'success'">
+        <h2>Success! Congratulations on Finding Falcone. King Shan is mighty pleased.</h2>
+        <h3>Time taken: {{finalResponse?.timeTaken}}</h3>
+        <h2> Planet found: {{finalResponse?.planet_name}}</h2>
+        <div fxLayoutAlign="center center">
+          <img src='./assets/{{ finalResponse.planet_name ? finalResponse.planet_name : "planet-not-selected"}}.png'
+            width="25px" height="25px">
+        </div>
+      </div>
+      <div *ngIf="finalResponse && finalResponse.status == 'false'">
+        <h1>Failed to find Falcone</h1>
+        <h2>Time taken: {{finalResponse.timeTaken}}</h2>
+      </div>
+
+      <div fxLayoutAlign="center center">
+        <button mat-raised-button color="primary" (click)="resetGame()">Start Again</button>
+      </div>
+    </div>
+    <br />
+  </div>
+</div>
